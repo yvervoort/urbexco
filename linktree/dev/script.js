@@ -11,11 +11,29 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
     return;
   }
 
-  // Simulated success (replace with real endpoint like Mailchimp or Google Apps Script)
-  console.log("Subscribed email:", email);
-  message.textContent = "Thank you for subscribing!";
-  message.style.color = "green";
+  // Prepare the data to send
+  const data = {
+    email: email,
+    consent: consent
+  };
 
-  // Optionally reset the form
-  this.reset();
+  // Send the data to Google Apps Script
+  fetch('https://script.google.com/macros/s/AKfycbykiURy21_XBfx3-r7Muqx2yOIKul-mzfzKCzgy7SMsJ2bfTewnO8vdNNuBN7tApXbFrA/exec', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+  .then(response => response.json())
+  .then(data => {
+    message.textContent = "Thank you for subscribing!";
+    message.style.color = "green";
+    this.reset(); // Optionally reset the form
+  })
+  .catch((error) => {
+    message.textContent = "An error occurred. Please try again later.";
+    message.style.color = "red";
+    console.error('Error:', error);
+  });
 });
