@@ -13,7 +13,7 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
 
   const date = new Date().toISOString();
 
-  const url = `https://script.google.com/macros/s/AKfycbylnzddDUDQqJSm2XGLggvu4Nh00nBKJXAexOZpE159G5IBcDULRD3i3gNx1f04RJf2Hg/exec?email=${encodeURIComponent(email)}&date=${encodeURIComponent(date)}&consent=${consent}`;
+  const url = `https://script.google.com/macros/s/AKfycbxg-mwFZe39aXdO4YWGmgfB4h5KUHcEtmytoBGFQEko3TfLGQ4c8WimP9lz0PgrmQGS/exec?email=${encodeURIComponent(email)}&date=${encodeURIComponent(date)}&consent=${consent}`;
 
   fetch(url)
     .then(response => response.json())
