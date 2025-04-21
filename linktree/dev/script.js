@@ -16,7 +16,7 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
   formData.append("email", email);
   formData.append("consent", consent); // stays as string
 
-  fetch('https://script.google.com/macros/s/AKfycbykiURy21_XBfx3-r7Muqx2yOIKul-mzfzKCzgy7SMsJ2bfTewnO8vdNNuBN7tApXbFrA/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbxwDL_0j97EYy2UVthrffsjYnzqcyOLdLKWub3K4VG330EIgef_m-kkTlUu9Yb1ho9R/exec', {
     method: 'POST',
     mode: 'cors',
     headers: {
