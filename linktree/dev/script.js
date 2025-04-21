@@ -11,28 +11,25 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
     return;
   }
 
-  const formData = new URLSearchParams();
-  formData.append("date", new Date().toISOString());
-  formData.append("email", email);
-  formData.append("consent", consent); // stays as string
+  const date = new Date().toISOString();
 
-  fetch('https://script.google.com/macros/s/AKfycbxwDL_0j97EYy2UVthrffsjYnzqcyOLdLKWub3K4VG330EIgef_m-kkTlUu9Yb1ho9R/exec', {
-    method: 'POST',
-    mode: 'cors',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: formData.toString(),
-  })
-  .then(response => response.json())
-  .then(data => {
-    message.textContent = "Thank you for subscribing!";
-    message.style.color = "green";
-    this.reset();
-  })
-  .catch((error) => {
-    message.textContent = "An error occurred. Please try again later.";
-    message.style.color = "red";
-    console.error('Error:', error);
-  });
+  const url = `https://script.google.com/macros/s/AKfycbylnzddDUDQqJSm2XGLggvu4Nh00nBKJXAexOZpE159G5IBcDULRD3i3gNx1f04RJf2Hg/exec?email=${encodeURIComponent(email)}&date=${encodeURIComponent(date)}&consent=${consent}`;
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        message.textContent = "Thank you for subscribing!";
+        message.style.color = "green";
+        this.reset();
+      } else {
+        message.textContent = "Something went wrong.";
+        message.style.color = "red";
+      }
+    })
+    .catch((error) => {
+      message.textContent = "An error occurred. Please try again later.";
+      message.style.color = "red";
+      console.error('Error:', error);
+    });
 });
