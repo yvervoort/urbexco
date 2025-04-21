@@ -55,6 +55,9 @@ form {
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 10px;
+  width: 100%;
+  max-width: 400px; /* Optional: limits form width */
+  box-sizing: border-box;
 }
 
 form h3 {
@@ -64,11 +67,12 @@ form h3 {
 
 input[type="email"] {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 15px;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 14px;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
 }
 
 .gdpr {
