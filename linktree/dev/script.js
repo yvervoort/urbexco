@@ -11,29 +11,24 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
     return;
   }
 
-  // Prepare the data to send
-  const data = {
-    date: new Date().toISOString(),
-    email: email,
-    consent: consent
-  };
+  const formData = new URLSearchParams();
+  formData.append("date", new Date().toISOString());
+  formData.append("email", email);
+  formData.append("consent", consent); // stays as string
 
-  console.log(data)
-
-  // Send the data to Google Apps Script
   fetch('https://script.google.com/macros/s/AKfycbykiURy21_XBfx3-r7Muqx2yOIKul-mzfzKCzgy7SMsJ2bfTewnO8vdNNuBN7tApXbFrA/exec', {
     method: 'POST',
     mode: 'cors',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: JSON.stringify(data),
+    body: formData.toString(),
   })
   .then(response => response.json())
   .then(data => {
     message.textContent = "Thank you for subscribing!";
     message.style.color = "green";
-    this.reset(); // Optionally reset the form
+    this.reset();
   })
   .catch((error) => {
     message.textContent = "An error occurred. Please try again later.";
