@@ -99,6 +99,11 @@
   
   
 
-  <script src="script5.js"></script>
+  <script>
+  // Delay script5.js execution until page + Firebase is ready
+  window.addEventListener('DOMContentLoaded', () => {
+    import('./script5.js');
+  });
+</script>
 </body>
 </html>
