@@ -88,6 +88,16 @@ document.getElementById("register-button").addEventListener("click", () => {
     .then(() => {
       msg.textContent = "Registration successful!";
       msg.style.color = "green";
+
+      // Reset fields
+      document.getElementById("register-email").value = "";
+      document.getElementById("register-password").value = "";
+      document.getElementById("register-confirm").value = "";
+
+      // Flip back to login after a second
+      setTimeout(() => {
+        card.classList.remove("flipped");
+      }, 1000);
     })
     .catch((error) => {
       msg.textContent = error.message;
@@ -106,6 +116,10 @@ document.getElementById("login-button").addEventListener("click", () => {
       msg.textContent = "Login successful!";
       msg.style.color = "green";
       modal.style.display = "none";
+
+      // Clear form fields
+      document.getElementById("login-email").value = "";
+      document.getElementById("login-password").value = "";
     })
     .catch((error) => {
       msg.textContent = error.message;
