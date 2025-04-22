@@ -26,6 +26,8 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const auth = getAuth();
+
+  window.firebase = { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged };
   </script>
   
 </head>
