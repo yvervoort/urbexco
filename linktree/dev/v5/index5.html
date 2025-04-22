@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Links</title>
+  <link rel="stylesheet" href="style5.css" />
+  
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+  import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyACU0hCDxnEv7onE-DOpdCbIHNke5SYkOs",
+    authDomain: "webapp-test-2b6de.firebaseapp.com",
+    projectId: "webapp-test-2b6de",
+    storageBucket: "webapp-test-2b6de.firebasestorage.app",
+    messagingSenderId: "1007968867751",
+    appId: "1:1007968867751:web:9698a1f4294b1e86f05282"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth();
+  </script>
+  
+</head>
+<body>
+  <div class="container">
+    <img src="profile-pic.jpg" alt="Profile" class="profile-pic" />
+    <h1>Your Name</h1>
+    <p class="bio">A short bio or tagline about you.</p>
+
+    <div class="links">
+      <a href="https://example.com" target="_blank">🌐 My Website</a>
+      <a href="https://twitter.com/" target="_blank">🐦 Twitter</a>
+      <a href="https://linkedin.com/" target="_blank">💼 LinkedIn</a>
+      <a href="https://github.com/" target="_blank">💻 GitHub</a>
+    </div>
+
+    <form id="newsletter-form">
+      <h3>Subscribe to my newsletter</h3>
+      <input type="email" id="email" placeholder="Enter your email" required />
+      
+      <label class="gdpr">
+        <input type="checkbox" id="gdpr" required />
+        I agree to receive updates by email and accept the privacy policy.
+      </label>
+
+      <button type="submit">Subscribe</button>
+      <p id="form-message"></p>
+    </form>
+  </div>
+  
+<!-- Top-Right Join Button -->
+<button id="join-button" class="join-btn">Join</button>
+<button id="logout-button" class="join-btn" style="display: none;">Logout</button>
+
+
+<!-- Modal Overlay -->
+<div id="auth-modal" class="modal">
+  <div class="modal-content">
+    <div class="card-container" id="card">
+      
+      <!-- LOGIN SIDE -->
+      <div class="card-side front">
+        <h3>Log in</h3>
+        <input type="email" id="login-email" placeholder="Email" required />
+        <input type="password" id="login-password" placeholder="Password" required />
+        <div class="alt-option"><a href="#">Forgot password?</a></div>
+        <button type="button" id="login-button">Log in</button>
+        <p class="switch-msg">Don’t have an account? <a href="#" id="to-register">Register</a></p>
+        <p id="login-message" class="status-msg"></p>
+      </div>
+
+      <!-- REGISTER SIDE -->
+      <div class="card-side back">
+        <h3>Create account</h3>
+        <input type="email" id="register-email" placeholder="Email" required />
+        <input type="password" id="register-password" placeholder="Password" required />
+        <input type="password" id="register-confirm" placeholder="Repeat password" required />
+        <button type="button" id="register-button">Register</button>
+        <p class="switch-msg">Already have an account? <a href="#" id="to-login">Log in</a></p>
+        <p id="register-message" class="status-msg"></p>
+      </div>
+
+    </div>
+    <span class="close">&times;</span>
+  </div>
+</div>
+  
+  
+  
+  
+
+  <script src="script5.js"></script>
+</body>
+</html>
