@@ -84,7 +84,7 @@ document.getElementById("register-button").addEventListener("click", () => {
     return;
   }
 
-  createUserWithEmailAndPassword(email, password)
+  createUserWithEmailAndPassword(auth, email, password)
     .then(() => {
       msg.textContent = "Registration successful!";
       msg.style.color = "green";
@@ -111,7 +111,7 @@ document.getElementById("login-button").addEventListener("click", () => {
   const password = document.getElementById("login-password").value;
   const msg = document.getElementById("login-message");
 
-  signInWithEmailAndPassword(email, password)
+  signInWithEmailAndPassword(auth, email, password)
     .then(() => {
       msg.textContent = "Login successful!";
       msg.style.color = "green";
@@ -128,7 +128,7 @@ document.getElementById("login-button").addEventListener("click", () => {
 });
 
 // Track auth state
-onAuthStateChanged((user) => {
+onAuthStateChanged(auth, (user) => {
   const logoutBtn = document.getElementById("logout-button");
 
   if (user) {
