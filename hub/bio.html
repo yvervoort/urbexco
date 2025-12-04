@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bio – DSS Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+<header class="w-full bg-white shadow-sm py-3 px-4 flex items-center justify-between sticky top-0 z-30">
+  <nav class="hidden md:flex items-center space-x-4">
+    <!-- Home icon -->
+    <a href="index.html"
+       class="flex items-center justify-center w-8 h-8 rounded-lg border border-gray-200 hover:bg-gray-50"
+       aria-label="Home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 11L12 3l9 8" />
+        <path d="M5 10v10h14V10" />
+      </svg>
+    </a>
+
+    <a href="bio.html" class="text-sm font-semibold text-indigo-600">Bio</a>
+    <a href="blog.html" class="text-sm text-gray-600 hover:text-indigo-600">Blog</a>
+    <a href="projects.html" class="text-sm text-gray-600 hover:text-indigo-600">Projects</a>
+    <a href="services.html" class="text-sm text-gray-600 hover:text-indigo-600">Services</a>
+  </nav>
+
+  <div class="md:hidden text-sm text-gray-500">Bio</div>
+
+  <a href="mailto:someone@example.com"
+     class="bg-gray-900 text-white px-4 py-2 text-sm rounded-lg shadow hover:bg-gray-700">
+    Contact
+  </a>
+</header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10 space-y-10">
+    <section>
+      <h1 class="text-2xl font-bold text-gray-900 mb-2">About me</h1>
+      <p class="text-sm text-gray-700 leading-relaxed">
+        Short narrative about who you are, what you care about and how you ended up working
+        on decision support systems for urban policy and innovation.
+      </p>
+    </section>
+
+    <section class="grid gap-6 md:grid-cols-2">
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+        <h2 class="text-sm font-semibold text-gray-800 mb-2">Background</h2>
+        <p class="text-sm text-gray-600 leading-relaxed">
+          Add a few key milestones: education, roles, organisations, domains you’ve worked in.
+        </p>
+      </div>
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+        <h2 class="text-sm font-semibold text-gray-800 mb-2">Focus</h2>
+        <p class="text-sm text-gray-600 leading-relaxed">
+          What you focus on now: spatial decision support, urban innovation, experimentation,
+          working with public-sector teams, etc.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-sm font-semibold text-gray-800 mb-3 uppercase tracking-wider">Now</h2>
+      <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
+        <li>Helping city / region teams design DSS experiments.</li>
+        <li>Writing publicly about SDSS, pretotyping and data-informed policy.</li>
+        <li>Building the DSS Circle as a learning & practice space.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

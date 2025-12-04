@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog – DSS Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+  <header class="w-full bg-white shadow-sm py-3 px-4 flex items-center justify-between sticky top-0 z-30">
+  <nav class="hidden md:flex items-center space-x-4">
+    <!-- Home icon -->
+    <a href="index.html"
+       class="flex items-center justify-center w-8 h-8 rounded-lg border border-gray-200 hover:bg-gray-50"
+       aria-label="Home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 11L12 3l9 8" />
+        <path d="M5 10v10h14V10" />
+      </svg>
+    </a>
+
+    <a href="bio.html" class="text-sm text-gray-600 hover:text-indigo-600">Bio</a>
+    <a href="blog.html" class="text-sm font-semibold text-indigo-600">Blog</a>
+    <a href="projects.html" class="text-sm text-gray-600 hover:text-indigo-600">Projects</a>
+    <a href="services.html" class="text-sm text-gray-600 hover:text-indigo-600">Services</a>
+  </nav>
+
+  <div class="md:hidden text-sm text-gray-500">Blog</div>
+
+  <a href="mailto:someone@example.com"
+     class="bg-gray-900 text-white px-4 py-2 text-sm rounded-lg shadow hover:bg-gray-700">
+    Contact
+  </a>
+</header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <header class="mb-8">
+      <h1 class="text-2xl font-bold text-gray-900 mb-2">Articles & notes</h1>
+      <p class="text-sm text-gray-600">
+        I write about spatial decision support, experimentation, and practical ways to make
+        urban policy more evidence-informed.
+      </p>
+    </header>
+
+    <section class="space-y-4">
+      <!-- Post 1 -->
+      <article class="bg-white border border-gray-100 rounded-xl shadow-sm p-5">
+        <h2 class="text-base font-semibold text-gray-900">
+          From dashboards to decisions: building SDSS that actually get used
+        </h2>
+        <p class="mt-2 text-sm text-gray-600">
+          Why most dashboards gather dust, and how to design decision support tools
+          around real workflow, timing and constraints.
+        </p>
+        <a href="https://your-hashnode-post-url" target="_blank"
+           class="inline-flex items-center mt-3 text-sm font-medium text-indigo-600 hover:text-indigo-800">
+          Read on my blog →
+        </a>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="bg-white border border-gray-100 rounded-xl shadow-sm p-5">
+        <h2 class="text-base font-semibold text-gray-900">
+          Pretotyping SDSS with spreadsheets and simple maps
+        </h2>
+        <p class="mt-2 text-sm text-gray-600">
+          A lightweight way to test if a decision support idea actually helps before
+          investing in full-blown platforms.
+        </p>
+        <a href="https://your-hashnode-post-url" target="_blank"
+           class="inline-flex items-center mt-3 text-sm font-medium text-indigo-600 hover:text-indigo-800">
+          Read on my blog →
+        </a>
+      </article>
+
+      <!-- Post 3 -->
+      <article class="bg-white border border-gray-100 rounded-xl shadow-sm p-5">
+        <h2 class="text-base font-semibold text-gray-900">
+          Patterns I see in cities experimenting with data-informed policy
+        </h2>
+        <p class="mt-2 text-sm text-gray-600">
+          Emerging patterns from cities that are learning their way forward,
+          rather than trying to buy “smart city in a box”.
+        </p>
+        <a href="https://your-hashnode-post-url" target="_blank"
+           class="inline-flex items-center mt-3 text-sm font-medium text-indigo-600 hover:text-indigo-800">
+          Read on my blog →
+        </a>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
